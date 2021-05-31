@@ -1,0 +1,24 @@
+<div *ngIf="article">
+
+      <h3 class="site">Code article : {{article.code}}</h3>
+     <h3 class="site">Nom de l'article : {{article.nom }}</h3>
+     <div style="text-align:center; margin-top: 100px; ">
+    <mat-card>
+      <mat-card-content>
+        <ul>
+          <li *ngFor="let file of files">
+            <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+            <span id="file-label"></span>
+          </li>
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="warn" (click)="onClick()">
+          <mat-icon>file_upload</mat-icon>
+          Ajouter des images
+        </button>
+      </mat-card-actions>
+    </mat-card>
+    <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*"
+           style="display:none;"/>
+  </div>

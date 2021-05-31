@@ -1,0 +1,47 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Ajouter une Produits</h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+              <mat-form-field class="example-full-width" appearance="fill" formGroupName="produits">
+                <mat-label>Selection un produit</mat-label>
+                <mat-select formControlName="nom" (selectionChange)="greetProd($event)" [(value)]="selected">
+                  <mat-option *ngFor="let p of produits" [value]="p.id">
+                    {{p.nom}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput type="text" placeholder="Code" formControlName="code"/>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput type="text" placeholder="Libelle" formControlName="nom"/>
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input matInput type="number" placeholder="Prix unitaire" formControlName="prixUnitaire"/>
+              </mat-form-field>
+
+              <br>
+              <mat-form-field>
+                <textarea matInput placeholder="Description" formControlName="description" type="text"></textarea>
+              </mat-form-field>
+              <br>
+              <button mat-raised-button type="submit" [disabled]="!articleForm.valid" class="btn btn-danger pull-right">Valider</button>
+              <div class="clearfix"></div>
+              <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

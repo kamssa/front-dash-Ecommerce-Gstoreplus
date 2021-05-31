@@ -1,0 +1,35 @@
+<div class="main-div">
+
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Modifier le  terrain</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <form [formGroup]="produitForm" (ngSubmit)="onSubmit()" novalidate *ngIf="produitForm">
+      <div class="well">
+        <mat-card>
+
+            <mat-form-field>
+              <input  matInput  type="text" placeholder="Libelle" formControlName="nom">
+            </mat-form-field>
+          <br>
+            <mat-form-field>
+              <textarea #value matInput type="text" placeholder="Description" formControlName="description"></textarea>
+            </mat-form-field>
+            <hr>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+              <button mat-raised-button class="boutonEnr" type="submit"> Modifier
+              </button>
+              <button mat-raised-button class="boutonAnn" type="button" type="reset">Annuler
+              </button>
+            </div>
+
+        </mat-card>
+
+      </div>
+    </form>
+  </mat-card>
+
+</div>
+
+

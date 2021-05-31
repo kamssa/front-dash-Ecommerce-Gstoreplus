@@ -1,0 +1,33 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Ajouter une categorie</h4>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="catForm" (ngSubmit)="createCategorie(catForm.value)">
+
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Nom" type="text" placeholder="Nom" formControlName="nom" [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="nom.hasError('required')">
+                      Entrer un <strong>Nom</strong>
+                    </mat-error>
+                  </mat-form-field>
+
+                <br>
+              <mat-form-field class="example-full-width">
+                    <textarea matInput type="text" placeholder="Description" formControlName="description"></textarea>
+                  </mat-form-field>
+              <br>
+              <button mat-raised-button type="submit" [disabled]="!catForm.valid" class="btn btn-danger pull-right">Valider</button>
+              <div class="clearfix"></div>
+              <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
