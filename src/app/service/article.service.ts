@@ -55,7 +55,7 @@ export class ArticleService {
 
   public upload(formData, id) {
     console.log('dans le service', formData);
-    return this.http.post<any>(`${environment.apiUrl}/api/travauxPhoto/?id=${id}`, formData,   {
+    return this.http.post<any>(`${environment.apiUrl}/api/upload/?id=${id}`, formData,   {
       reportProgress: true,
       observe: 'events'
     });

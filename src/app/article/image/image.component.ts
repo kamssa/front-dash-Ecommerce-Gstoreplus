@@ -41,7 +41,7 @@ export class ImageComponent implements OnInit {
   uploadFile(file) {
     console.log('Voir les fichiers', file);
     const formData = new FormData();
-    formData.append('image_photo', file.data);
+    formData.append('multipartFile', file.data);
     file.inProgress = true;
     this.articleService.upload(formData, this.idArticles).pipe(
       map(event => {
