@@ -29,6 +29,7 @@
     "@types/highcharts": "^7.0.0",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^5.0.1",
+    "express": "^4.17.1",
     "font-awesome": "^4.7.0",
     "highcharts-angular": "^2.10.0",
     "jquery": "^3.6.0",
